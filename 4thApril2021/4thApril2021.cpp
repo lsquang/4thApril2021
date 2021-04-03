@@ -35,14 +35,52 @@ int count_appearance(const vector<int>& numbers, int x) {
     return count;
 }
 
+// find min 
+int find_min(const vector<int>& numbers) {
+    int min = numbers[0];
+    for (int value : numbers) {
+        if (min > value) {
+            min = value;
+        }
+    }
+    return min;
+}
+
+// find min 
+int find_max(const vector<int>& numbers) {
+    int max = numbers[0];
+    for (int value : numbers) {
+        if (max > value) {
+            max = value;
+        }
+    }
+    return max;
+}
+
+// find sum of all numbers
+int find_sum(const vector<int>& numbers) {
+    int sum = 0;
+    for (int value : numbers) {
+        sum += value;
+    }
+    return sum;
+}
 
 int main()
 {
+    
     vector<int> numbers = { 1,4, 3, 2, 6, 3, 15, 32 };
     vector<int> even_numbers = get_even_number(numbers);
+    cout << "numbers = " << endl;
+    display_vector(numbers);
+
+    cout << "even numbers = " << endl;
     display_vector(even_numbers);
-    cout << "number appearance of 3 " << count_appearance(numbers, 3) << endl;
-    cout << "number appearance of 15 " << count_appearance(numbers, 15) << endl;
-    cout << "number appearance of 25 " << count_appearance(numbers, 25) << endl;
+    cout << "number appearance of 3: " << count_appearance(numbers, 3) << endl;
+    cout << "number appearance of 15: " << count_appearance(numbers, 15) << endl;
+    cout << "number appearance of 25: " << count_appearance(numbers, 25) << endl;
+    cout << "min of numbers = " << find_min(numbers) << endl;
+    cout << "max of numbers = " << find_max(numbers) << endl;
+    cout << "sum of numbers = " << find_sum(numbers) << endl;
 
 }
