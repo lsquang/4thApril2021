@@ -6,11 +6,11 @@
 #include <vector>
 using namespace std;
 
-vector<int> get_divide_by3(vector<int>& numbers) {
+vector<int> get_even_number(vector<int>& numbers) {
     vector<int> output;
 
     for (int value : numbers) {
-        if (value % 3 == 0) {
+        if (value % 2 == 0) {
             output.push_back(value);
         }
     }
@@ -39,8 +39,8 @@ int count_appearance(const vector<int>& numbers, int x) {
 int main()
 {
     vector<int> numbers = { 1,4, 3, 2, 6, 3, 15, 32 };
-    vector<int> results = get_divide_by3(numbers);
-    display_vector(results);
+    vector<int> even_numbers = get_even_number(numbers);
+    display_vector(even_numbers);
     cout << "number appearance of 3 " << count_appearance(numbers, 3) << endl;
     cout << "number appearance of 15 " << count_appearance(numbers, 15) << endl;
     cout << "number appearance of 25 " << count_appearance(numbers, 25) << endl;
